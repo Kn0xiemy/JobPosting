@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import HomeCards from "./components/HomeCards";
 import JobListings from "./components/JobListings";
+import ViewJobs from "./components/ViewJobs";
 
 const App = () => {
   return (
@@ -11,15 +12,8 @@ const App = () => {
       <Hero title="Become a React Dev" subtitle="Find the React job that is right for you!"></Hero>
       <HomeCards></HomeCards>
       <JobListings></JobListings>
+      <ViewJobs></ViewJobs>
 
-      <section className="m-auto max-w-lg my-10 px-6">
-        <a
-          href="jobs.html"
-          className="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
-        >
-          View All Jobs
-        </a>
-      </section>
     </>
   );
 };
