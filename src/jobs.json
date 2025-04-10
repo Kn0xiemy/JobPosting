@@ -1,5 +1,5 @@
-{ 
-  "jobs" :[
+{
+  "jobs": [
     {
       "id": "1",
       "title": "Senior React Developer",
@@ -67,7 +67,7 @@
         "name": "Browning Technologies",
         "description": "Browning Technologies is a rapidly growing technology company specializing in e-commerce solutions. We offer a dynamic and collaborative work environment where employees are encouraged to think creatively and innovate.",
         "contactEmail": "contact@consecteturadipisicing.com",
-        "contactPhone": "555-555-5555"
+        "contactPhone": "555-554-5555"
       }
     },
     {
@@ -83,6 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "0be1",
+      "title": "asdasdad",
+      "type": "Full-Time",
+      "location": "asdasdadsa",
+      "description": "asdada",
+      "salary": "Under $50K",
+      "company": {
+        "name": "awdawda",
+        "description": "dawdadsda",
+        "contactEmail": "asdad@mail.com",
+        "contactPhone": "123123123"
+      }
     }
-]
+  ]
 }
