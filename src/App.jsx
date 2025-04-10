@@ -23,14 +23,22 @@ const App = () => {
     return;
   }
   // Removing context job from server
-  
+  const deleteJob = async (id) => {
+    {
+      const res = await fetch(`/api/jobs/${id}`, {
+        method: 'DELETE'
+      })
+      return;
+    }
+  }
+
   const router = createBrowserRouter(
     createRoutesFromElements(
     <Route path="/" element={<MainLayout></MainLayout>}>
       <Route index element={<HomePage></HomePage>}></Route>
       <Route path='/jobs' element={ <JobsPage></JobsPage> }></Route>
       <Route path='/add-job' element={ <AddJobPage  addJobSubmit={addJob}></AddJobPage> }></Route>
-      <Route path='/jobs/:id' element={ <JobDetails></JobDetails> } loader={jobLoader}></Route>
+      <Route path='/jobs/:id' element={ <JobDetails deleteJob={deleteJob}></JobDetails> } loader={jobLoader}></Route>
       <Route path='*' element={ <Error404></Error404> }></Route>
   
     </Route>
