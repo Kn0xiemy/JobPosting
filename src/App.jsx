@@ -7,6 +7,8 @@ import Error404 from "./pages/Error404";
 import JobDetails, {jobLoader} from "./pages/JobDetails";
 import AddJobPage from "./pages/AddJobPage";
 import addJobSubmit from "../src/pages/AddJobPage";
+import 'react-toastify/dist/ReactToastify.css'
+import EditJob from "./pages/EditJob";
 
 
 
@@ -32,12 +34,25 @@ const App = () => {
     }
   }
 
+  // Updating context job
+  const updateJob = async (job) => {
+    const res = await fetch(`/api/jobs/${job.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(job),
+    })
+    return;
+  }
+
   const router = createBrowserRouter(
     createRoutesFromElements(
     <Route path="/" element={<MainLayout></MainLayout>}>
       <Route index element={<HomePage></HomePage>}></Route>
       <Route path='/jobs' element={ <JobsPage></JobsPage> }></Route>
       <Route path='/add-job' element={ <AddJobPage  addJobSubmit={addJob}></AddJobPage> }></Route>
+      <Route path='/edit-job/:id' element={ <EditJob updateJobSubmit={updateJob}></EditJob> } loader={jobLoader}></Route>
       <Route path='/jobs/:id' element={ <JobDetails deleteJob={deleteJob}></JobDetails> } loader={jobLoader}></Route>
       <Route path='*' element={ <Error404></Error404> }></Route>
   

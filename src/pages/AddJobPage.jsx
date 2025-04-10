@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import {toast} from 'react-toastify';
 
 
 const AddJobPage = ({addJobSubmit}) => {
@@ -34,7 +35,9 @@ const AddJobPage = ({addJobSubmit}) => {
             }
         }
         addJobSubmit(newJob);
+        toast.success('Job Successfully Created!')
         return navigate('/jobs');
+       
     }
 
     return (
@@ -210,7 +213,7 @@ const AddJobPage = ({addJobSubmit}) => {
 
                             <div>
                                 <button
-                                    className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+                                    className="hover: cursor-pointer bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                                     type="submit"
                                 >
                                     Add Job
