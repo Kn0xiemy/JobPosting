@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // Example state to track login status
+  const [isLoggedIn, setIsLoggedIn] = useState(true); 
 
   const handleLogout = () => {
-    // Perform logout actions here, such as clearing local storage, resetting state, etc.
     setIsLoggedIn(false);
   };
 
