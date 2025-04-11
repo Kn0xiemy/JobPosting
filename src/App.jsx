@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import EditJob from "./pages/EditJob";
 import LoginPage from "./pages/LoginPage";
 import { AuthContextProvider } from "./context/AuthContext";
+import RegisterPage from "./pages/RegisterPage";
 
 
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
       <Route index element={<HomePage></HomePage>}></Route>
       <Route path='/jobs' element={ <JobsPage></JobsPage> }></Route>
       <Route path='/login' element={ <LoginPage></LoginPage> }></Route>
+      <Route path='/register' element={ <RegisterPage></RegisterPage> }></Route>
       <Route path='/add-job' element={ <AddJobPage  addJobSubmit={addJob}></AddJobPage> }></Route>
       <Route path='/edit-job/:id' element={ <EditJob updateJobSubmit={updateJob}></EditJob> } loader={jobLoader}></Route>
       <Route path='/jobs/:id' element={ <JobDetails deleteJob={deleteJob}></JobDetails> } loader={jobLoader}></Route>
