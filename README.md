@@ -1,3 +1,23 @@
+What is required to run this project:
+
+Make sure you use npm install in the client folder.
+
+Additionally, ensure these are installed:
+
+react-router dom
+React-icons
+React-toastify
+useNavigate
+React-spinners
+
+Afterwards, use the following to launch the servers:
+
+npm run dev -> This has to be ran in the client folder
+npm run server -> Must also be ran in the client folder
+node server.js -> This one is ran on the server folder
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
