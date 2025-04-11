@@ -1,8 +1,30 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import logo from '../assets/images/logo.png';
+import { useLogin } from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "../hooks/useForm";
+
+const initialValues = {email: '', password:''}
+
 
 export default function LoginPage() {
+
+    const login = useLogin();
+    const navigate = useNavigate();
+
+    const loginHandler = async ({ email, password }) => {
+        try {
+          await login(email, password);
+          navigate("/");
+          console.log('Successfully Logged In!')
+        } catch (error) {
+          console.log(error.message);
+        }
+      };
+
+      const {values, changeHandler, submitHandler} = useForm(initialValues, loginHandler);
+
     return (
         <>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -18,7 +40,7 @@ export default function LoginPage() {
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form action="#" method="POST" className="space-y-6">
+                    <form action="#" method="POST" className="space-y-6" onSubmit={submitHandler}>
                         <div>
                             <label htmlFor="email" className="block text-sm/6 font-medium text-gray-900">
                                 Email address
@@ -31,6 +53,8 @@ export default function LoginPage() {
                                     required
                                     autoComplete="email"
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                                    value={values.email}
+                                    onChange={changeHandler}
                                 />
                             </div>
                         </div>
@@ -51,6 +75,8 @@ export default function LoginPage() {
                                     required
                                     autoComplete="current-password"
                                     className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                                    value={values.password}
+                                    onChange={changeHandler}
                                 />
                             </div>
                         </div>
@@ -59,6 +85,7 @@ export default function LoginPage() {
                             <button
                                 type="submit"
                                 className="hover: cursor-pointer flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                id="submit-button" value="Login"
                             >
                                 Sign in
                             </button>

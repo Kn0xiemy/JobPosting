@@ -6,10 +6,10 @@ import JobsPage from "./pages/JobsPage";
 import Error404 from "./pages/Error404";
 import JobDetails, {jobLoader} from "./pages/JobDetails";
 import AddJobPage from "./pages/AddJobPage";
-import addJobSubmit from "../src/pages/AddJobPage";
 import 'react-toastify/dist/ReactToastify.css'
 import EditJob from "./pages/EditJob";
 import LoginPage from "./pages/LoginPage";
+import { AuthContextProvider } from "./context/AuthContext";
 
 
 const App = () => {
@@ -47,6 +47,7 @@ const App = () => {
   }
 
   const router = createBrowserRouter(
+    
     createRoutesFromElements(
     <Route path="/" element={<MainLayout></MainLayout>}>
       <Route index element={<HomePage></HomePage>}></Route>
@@ -61,7 +62,7 @@ const App = () => {
     
   )
   );
-  return <RouterProvider router={router}></RouterProvider>;
+  return <AuthContextProvider><RouterProvider router={router}></RouterProvider></AuthContextProvider>;
 };
 
 export default App;
