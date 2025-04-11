@@ -5,6 +5,7 @@ import { useForm } from "../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo from '../assets/images/logo.png';
+import {toast} from 'react-toastify';
 
 const initialValues = { email: "", password: "", "confirm-password": "" };
 
@@ -129,11 +130,14 @@ const RegisterPage = () => {
             </div>
 
             <div>
-              <button
+              <button onClick={() => {
+                toast.success('Registration successful!')
+              }}
                 type="submit"
                 className="hover: cursor-pointer flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 id="submit-button"
                 value="Login"
+                
               >
                 Register
               </button>

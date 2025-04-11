@@ -3,7 +3,7 @@ import logo from "../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
-import {toast} from 'react-toastify';
+
 
 const Navbar = () => {
   const { isAuthenticated } = useContext(AuthContext);
@@ -51,8 +51,7 @@ const Navbar = () => {
                   {isAuthenticated ? (
                     <NavLink to="/" className={linkClass} onClick={() => {
                       localStorage.removeItem('accessToken');
-                      
-                      toast.success('Successfully Logged out!')
+                      window.location.reload() // no time to fix the logout, so this is a temporary method
                     }}>
                       Logout
                     </NavLink>
