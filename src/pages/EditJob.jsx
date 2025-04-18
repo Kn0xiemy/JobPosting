@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 
 const EditJob = ({ updateJobSubmit }) => {
   const job = useLoaderData();
@@ -41,12 +40,11 @@ const EditJob = ({ updateJobSubmit }) => {
       },
     };
     updateJobSubmit(updatedJob);
-    toast.success("Job Successfully Updated!");
     return navigate(`/jobs/${id}`);
   };
   return (
     <>
-      <form onSubmit={submitForm} >
+      <form onSubmit={submitForm}>
         <h2 className="text-3xl text-center font-semibold mb-6">Update Job</h2>
 
         <div className="mb-4">
@@ -216,11 +214,11 @@ const EditJob = ({ updateJobSubmit }) => {
         </div>
 
         <div>
-          <button className="hover: cursor-pointer bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
-            onClick={(e) => {
+          <button
+            className="hover: cursor-pointer bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+            onClick={() => {
               navigate("/");
             }}
-            
             type="submit"
           >
             Update Job

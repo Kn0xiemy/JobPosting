@@ -8,24 +8,10 @@
       "description": "We are seeking a talented Front-End Developer to join our team in Boston, MA. The ideal candidate will have strong skills in HTML, CSS, and JavaScript, with experience working with modern JavaScript frameworks such as React or Angular.",
       "salary": "$70K - $80K",
       "company": {
-        "name": "NewTek Solutions",
+        "name": "NewTek Solutionsz",
         "description": "NewTek Solutions is a leading technology company specializing in web development and digital solutions. We pride ourselves on delivering high-quality products and services to our clients while fostering a collaborative and innovative work environment.",
-        "contactEmail": "contact@teksolutions.com",
+        "contactEmail": "contact@teksolutions.comz",
         "contactPhone": "222222"
-      }
-    },
-    {
-      "id": "2",
-      "title": "Front-End Engineer (React & Redux)",
-      "type": "Full-Time",
-      "location": "Miami, FL",
-      "description": "Join our team as a Front-End Developer in sunny Miami, FL. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
-      "salary": "$60K - 70K",
-      "company": {
-        "name": "Veneer Solutionsz",
-        "description": "Veneer Solutions is a creative agency specializing in digital design and development. Our team is dedicated to pushing the boundaries of creativity and innovation to deliver exceptional results for our clients.",
-        "contactEmail": "contact@loremipsum.com",
-        "contactPhone": "333-333-3332"
       }
     },
     {
@@ -82,6 +68,20 @@
         "description": "Port Solutions is a leading technology company specializing in software development and digital marketing. We are committed to providing our clients with cutting-edge solutions and our employees with a supportive and rewarding work environment.",
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "11ae",
+      "title": "awdaw",
+      "type": "Full-Time",
+      "location": "adawda",
+      "description": "awdwdawd",
+      "salary": "Under $50K",
+      "company": {
+        "name": "awdawd",
+        "description": "adwawd",
+        "contactEmail": "contact@teksolutions.comz",
+        "contactPhone": "123213124213"
       }
     }
   ]
